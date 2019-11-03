@@ -4,7 +4,8 @@ using System.Threading;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace MqReceiverV1
+
+namespace MqManualReceiverV1
 {
     class Program
     {
@@ -16,13 +17,13 @@ namespace MqReceiverV1
                 {
                     HostName = "localhost"
                 };
-                using(IConnection connection = connectionFactory.CreateConnection())
+                using (IConnection connection = connectionFactory.CreateConnection())
                 {
-                    using(IModel channel = connection.CreateModel())
+                    using (IModel channel = connection.CreateModel())
                     {
                         //It will be created only if queue doesn't exist
                         channel.QueueDeclare(
-                                queue: "queue_intro",
+                                queue: "queue_manual",
                                 durable: false,
                                 exclusive: false,
                                 autoDelete: false,
@@ -40,13 +41,17 @@ namespace MqReceiverV1
                         consumer.Received += (sender, payload) =>
                         {
                             string message = Encoding.UTF8.GetString(payload.Body);
-                            Console.WriteLine($"Processing message `{message}`....");
-                            Thread.Sleep(4000);
+                            Console.WriteLine($"\nProcessing message `{message}`....");
+                            Thread.Sleep(5000);
                             Console.WriteLine($"Message: `{message}` was processed");
+                            channel.BasicAck(
+                                    deliveryTag: payload.DeliveryTag,
+                                    multiple: false
+                                );
                         };
                         channel.BasicConsume(
-                                queue: "queue_intro",
-                                autoAck: true,
+                                queue: "queue_manual",
+                                autoAck: false,
                                 consumer: consumer
                             );
                         Console.WriteLine("Press [ENTER] to quit");
@@ -54,7 +59,7 @@ namespace MqReceiverV1
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
