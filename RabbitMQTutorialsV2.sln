@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trainings", "Trainings", "{E5C6E2E5-B092-4F25-B07D-B78F25C7E546}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practices", "Practices", "{79C8580D-9F1D-49D7-B93A-0B5D8BED61A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Intro to RabbitMQ", "1. Intro to RabbitMQ", "{5BB17E2D-F3BC-4634-941C-71C9A8959F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqSenderV1", "MqSenderV1\MqSenderV1.csproj", "{22E0F89A-406D-4E39-AA17-58C2E9C632EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqReceiverV1", "MqReceiverV1\MqReceiverV1.csproj", "{891DD11B-9511-4F7D-A547-23FC77580BA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22E0F89A-406D-4E39-AA17-58C2E9C632EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E0F89A-406D-4E39-AA17-58C2E9C632EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E0F89A-406D-4E39-AA17-58C2E9C632EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E0F89A-406D-4E39-AA17-58C2E9C632EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891DD11B-9511-4F7D-A547-23FC77580BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891DD11B-9511-4F7D-A547-23FC77580BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891DD11B-9511-4F7D-A547-23FC77580BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891DD11B-9511-4F7D-A547-23FC77580BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BB17E2D-F3BC-4634-941C-71C9A8959F13} = {E5C6E2E5-B092-4F25-B07D-B78F25C7E546}
+		{22E0F89A-406D-4E39-AA17-58C2E9C632EE} = {5BB17E2D-F3BC-4634-941C-71C9A8959F13}
+		{891DD11B-9511-4F7D-A547-23FC77580BA6} = {5BB17E2D-F3BC-4634-941C-71C9A8959F13}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E0734DB-7A55-43EE-8030-0D0CC33B86CD}
+	EndGlobalSection
+EndGlobal
